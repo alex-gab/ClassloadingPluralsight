@@ -1,0 +1,32 @@
+Run command:
+
+java -cp target/classes/:lib/interfaces.jar:lib/mysql-connector-java-6.0.5.jar com.alex.database.Main
+
+
+Enable mysql to load files from hardrive:
+1/ Grant FILE priviledges for the user
+UPDATE mysql.user SET Grant_priv='Y', Super_priv='Y' WHERE User='pluralsightUser';
+FLUSH PRIVILEGES;
+GRANT FILE ON *.* TO 'root'@'localhost';
+flush privileges;
+show grants;
+
+2/ Check these
+select @@max_allowed_packet;
+select @@secure_file_priv;
+
+3/ Move the file in the location specified by the secure_file_priv
+
+
+4/ Create schema
+create table Classes (
+	className varchar(255),
+    class BLOB
+);
+
+insert into Classes (className, class) values ('com.alex.implementations.Quote', LOAD_FILE('/var/lib/mysql-files/Quote.class'));
+commit;
+
+
+5/ For more info see:
+http://www.tek-tips.com/viewthread.cfm?qid=1695450
