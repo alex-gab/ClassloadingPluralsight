@@ -1,4 +1,4 @@
 {
   "factoryType": "com.alex.CanonCameraFactory",
-  "location": "file:///../out/artifacts/CameraLib_jar/CameraLib.jar"
+  "location": "file:///../../camera-implementation/1.0/camera-implementation-1.0.jar"
 }
