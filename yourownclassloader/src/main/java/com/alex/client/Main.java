@@ -12,7 +12,7 @@ public final class Main {
         final URLClassLoader ucl = new URLClassLoader(new URL[]{url});
 
         final Class<IQuote> clazz =
-                (Class<IQuote>) ucl.loadClass("com.alex.implementations.Quote");
+                (Class<IQuote>) ucl.loadClass("Quote");
         final IQuote quote = clazz.newInstance();
         System.out.println(quote.getQuote());
     }

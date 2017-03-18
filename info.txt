@@ -1,6 +1,6 @@
 Run command:
 
-java -cp target/classes/:lib/interfaces.jar:lib/mysql-connector-java-6.0.5.jar com.alex.database.Main
+java -cp target/classes/:lib/interfaces.jar:lib/mysql-connector-java-6.0.5.jar Main
 
 
 Enable mysql to load files from hardrive:
@@ -24,7 +24,7 @@ create table Classes (
     class BLOB
 );
 
-insert into Classes (className, class) values ('com.alex.implementations.Quote', LOAD_FILE('/var/lib/mysql-files/Quote.class'));
+insert into Classes (className, class) values ('Quote', LOAD_FILE('/var/lib/mysql-files/Quote.class'));
 commit;
 
 

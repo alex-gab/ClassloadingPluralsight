@@ -8,7 +8,7 @@ public final class Main {
             DatabaseClassLoader cl =
                     new DatabaseClassLoader(
                             "jdbc:mysql://localhost:3306/ClassloadingPluralsight?useSSL=false&user=pluralsightUser&password=pluralsightPassword");
-            Class clazz = cl.findClass("com.alex.implementations.Quote");
+            Class clazz = cl.findClass("Quote");
             IQuote quote = (IQuote) clazz.newInstance();
             System.out.println(quote.getQuote());
         } catch (ClassNotFoundException e) {
